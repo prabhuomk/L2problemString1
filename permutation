@@ -1,0 +1,49 @@
+class Solution {
+    
+    List<String> result=new ArrayList();
+    
+    public List<String> find_permutation(String S) {
+        
+        int right=S.length()-1;
+        permute(S,0,right);
+        Collections.sort(result);
+        return result;
+    }
+    
+    public void permute(String str,int left,int right)
+    {
+        
+        if(left==right)
+        {
+            result.add(str);
+        }
+        else
+        {
+            for(int i=left;i<=right;i++)
+            {
+                str=swap(str,left,i);
+                permute(str,left+1,right);
+                str=swap(str,left,i);
+            }
+            
+        }
+        
+     }
+     
+     public String swap(String str,int left,int right)
+     {
+         char temp;
+         char[] data=str.toCharArray();
+         temp=data[left];
+         data[left]=data[right];
+         data[right]=temp;
+         return String.valueOf(data);
+         
+     }
+     
+    
+    
+    
+    
+    
+}
