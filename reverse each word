@@ -1,0 +1,47 @@
+class Solution
+{
+   
+    String reverseWords(String S)
+    {
+        String[] task=S.split("\\.");
+        
+        String[] reverseTask=new String[task.length];
+        
+        String result="";
+        
+        for(int i=0;i<task.length;i++)
+        {
+            String beforeReverse=task[i];
+            
+            String afterReverse="";
+            
+            for(int j=(beforeReverse.length()-1);j>=0;j--)
+            {
+                 char reverseChar =beforeReverse.charAt(j);
+                 
+                 afterReverse=afterReverse+reverseChar;
+                 
+            }
+        
+            reverseTask[i]=afterReverse;
+        }
+        
+        for(int k=0;k<reverseTask.length;k++)
+        {
+            if(k<reverseTask.length-1)
+            {
+                  result=result+reverseTask[k]+".";
+            }
+            else
+            {
+                  result=result+reverseTask[k];
+            }
+        }
+        while(S.length()>result.length())
+        {
+            result=result+".";
+        }
+        return result;
+ 
+    }
+}
