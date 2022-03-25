@@ -1,0 +1,32 @@
+class Solution
+{
+    String reverseWithSpacesIntact(String S)
+    {
+        int start=0;
+        int end=S.length()-1;
+        char[] data=S.toCharArray();
+        
+        while(start<end)
+        {
+            if(data[start]==' ')
+            {
+                start++;
+            }
+            else if(data[end]==' ')
+            {
+                end--;
+            }
+            else
+            {
+            char temp;
+            temp=data[start];
+            data[start]=data[end];
+            data[end]=temp;
+            start++;
+            end--;
+            }
+        }
+        
+        return String.valueOf(data);
+    }
+}
