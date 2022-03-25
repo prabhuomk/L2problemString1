@@ -1,0 +1,18 @@
+class GfG
+{
+/*method prints the given pattern in a single line */
+	void printPattern(String s)
+	{
+	    int len=s.length();
+	    int middle=(len-1)/2;
+	    String res=s.substring(middle,len)+s.substring(0,middle);
+	    String result="";
+	    for(int i=1;i<=len;i++)
+	    {
+	        result=result+res.substring(0,i)+"$"+" ";
+	    }
+    
+	    System.out.print(result);
+	}
+    
+}
