@@ -1,0 +1,23 @@
+class Solution {
+    public String restoreString(String s, int[] indices) {
+        
+        int len=indices.length;
+        
+        String result="";
+        
+        String[] task = new String[len];
+        
+        for(int i=0;i<len;i++)
+        {
+            task[indices[i]]=String.valueOf(s.charAt(i));
+        }
+        
+        for(int j=0;j<len;j++)
+        {
+            result=result+task[j];
+        }
+        
+        return result;
+        
+    }
+}
