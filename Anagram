@@ -1,0 +1,38 @@
+class Solution {
+    public List<List<String>> Anagrams(String[] string_list) {
+        
+        HashMap<String,List<String>> data=new HashMap<>();
+        
+        int len=string_list.length;
+        
+        for(int i=0;i<len;i++)
+        {
+            String temp=string_list[i];
+            char[] con=temp.toCharArray();
+            Arrays.sort(con);
+            String result=String.valueOf(con);
+            
+            if(data.containsKey(result))
+            {
+                data.get(result).add(temp);
+            }
+            else
+            {
+                List<String> list=new ArrayList<>();
+                list.add(temp);
+                data.put(result,list);
+            }
+        }
+
+    List<List<String>> devil=new ArrayList();
+     
+      for(String value:data.keySet())
+      {
+         List<String> res=data.get(value);
+         devil.add(res);
+         
+      }
+return devil;
+     
+    }
+}
