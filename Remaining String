@@ -1,0 +1,41 @@
+class Solution {
+    String printString(String S, char ch, int count) {
+        
+         int clock=0;
+        int i;
+        
+      if(count==0)  
+     { 
+         return S;
+     }
+     
+        for(i=0;i<S.length();i++)
+        {
+            if(S.charAt(i)==ch)
+            {
+                clock++;
+            }
+            
+            if(clock==count)
+            
+            {
+                break;
+            }
+            
+    
+        }
+        
+             if(i< S.length()-1)
+             {
+                  return S.substring(i+1);
+             }
+             else
+             {
+                 return "Empty string";
+             }
+        
+      
+     
+        
+    }
+}
